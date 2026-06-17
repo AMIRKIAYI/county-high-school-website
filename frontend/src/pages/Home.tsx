@@ -6,16 +6,22 @@ import HeroCarousel from '../components/HeroCarousel';
 // Hero images
 const heroImages = [
   {
-    image: '/images/hero/image4.png'
+    image: '/images/hero/Image.png'
   },
   {
-    image: '/images/hero/image2.jpg'
+    image: '/images/hero/image1.png'
   },
   {
-    image: '/images/hero/image3.png'
+    image: '/images/hero/image7.png'
   },
   {
-    image: '/images/hero/image5.png'
+    image: '/images/hero/image8.png'
+  },
+  {
+    image: '/images/hero/image9.png'
+  },
+  {
+    image: '/images/hero/image.png'
   },
 ];
 
@@ -83,7 +89,7 @@ const Home: React.FC = () => {
         <HeroCarousel slides={heroImages} autoPlayInterval={6000} />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30 z-[5]"></div>
+        <div className="absolute inset-0 from-black/80 via-black/50 to-black/30 z-[5]"></div>
         
         {/* Content Overlay */}
         <div className="absolute inset-0 flex items-center z-10">
@@ -167,7 +173,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="hidden lg:block flex-1 max-w-sm"
               >
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
+                <div className="bg-white/20  rounded-2xl p-6 border border-white/20 shadow-2xl">
                   <h3 className="text-white text-sm font-semibold mb-4 text-center uppercase tracking-wider">Quick Information</h3>
                   <div className="space-y-3">
                     {[

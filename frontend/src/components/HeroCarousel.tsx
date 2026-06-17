@@ -32,24 +32,19 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides, autoPlayInterval = 
             backgroundImage: `url(${slide.image})`,
             opacity: index === currentIndex ? 1 : 0,
             zIndex: index === currentIndex ? 2 : 1,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         >
-          {/* Zoom animation on active image only */}
-          {index === currentIndex && (
-            <div 
-              className="absolute inset-0"
-              style={{
-                animation: 'slowZoom 12s ease-in-out infinite',
-              }}
-            />
-          )}
+          {/* No zoom animation layer - removed */}
         </div>
       ))}
       
-      {/* White transparent overlay - always present */}
+      {/* White transparent overlay */}
       <div className="absolute inset-0 bg-white/10 backdrop-blur-[1px] z-10" />
       
-      {/* Text Content - Always visible, just changes values */}
+      {/* Text Content */}
       <div className="absolute inset-0 flex items-center justify-center z-20">
         <div className="text-center text-white px-4">
           <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
@@ -73,20 +68,6 @@ const HeroCarousel: React.FC<HeroCarouselProps> = ({ slides, autoPlayInterval = 
           />
         ))}
       </div>
-
-      <style>{`
-        @keyframes slowZoom {
-          0% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.1);
-          }
-          100% {
-            transform: scale(1);
-          }
-        }
-      `}</style>
     </div>
   );
 };
